@@ -55,7 +55,7 @@ export default function Hero() {
       label: "Download Resume",
       primary: false,
       icon: Download,
-      download: "Bhanu Resume.pdf",
+      download: site.resumeDownload,
     },
     {
       href: "#contact",

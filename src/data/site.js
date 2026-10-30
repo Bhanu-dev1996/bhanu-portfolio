@@ -12,7 +12,8 @@ export const site = {
   portfolioUrl: "https://bhanushankar-portfolio.netlify.app",
   location: "Hyderabad, Telangana, India · Remote-friendly",
   availability: "Available for new opportunities",
-  resumeUrl: "/Bhanu%20Resume.pdf",
+  resumeUrl: "/Portfolio%20Resume.pdf?v=1",
+  resumeDownload: "Portfolio Resume.pdf",
 
   socials: [
     { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/bhanu-shankar1796", icon: "linkedin" },

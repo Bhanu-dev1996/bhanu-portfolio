@@ -92,7 +92,7 @@ export default function Navbar({ theme, toggleTheme }) {
           <div className="flex items-center gap-2 sm:gap-3">
             <a
               href={site.resumeUrl}
-              download="Bhanu Resume.pdf"
+              download={site.resumeDownload}
               className="hidden items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-colors duration-300 hover:bg-primary sm:inline-flex"
             >
               <Download className="h-4 w-4" aria-hidden="true" />
@@ -173,7 +173,7 @@ export default function Navbar({ theme, toggleTheme }) {
               <div className="mt-auto space-y-4">
                 <a
                   href={site.resumeUrl}
-                  download="Bhanu Resume.pdf"
+                  download={site.resumeDownload}
                   className="flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-primary"
                 >
                   <Download className="h-4 w-4" aria-hidden="true" />

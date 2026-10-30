@@ -46,7 +46,7 @@ export default function Footer() {
             </a>
             <a
               href={site.resumeUrl}
-              download="Bhanu Resume.pdf"
+              download={site.resumeDownload}
               className="inline-flex items-center justify-center gap-2 rounded-full border border-line bg-card/80 px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
             >
               <Download className="h-4 w-4" aria-hidden="true" />
