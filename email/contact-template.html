@@ -1,0 +1,89 @@
+<!--
+  Reusable portfolio contact template. Paste into EmailJS → Email Templates → Content (HTML).
+  Neutral theme so it fits any portfolio. The name is fixed; the site link comes from {{site_url}}.
+
+  Subject:  {{subject}}
+  To Email: {{to_email}}
+  Reply To: {{reply_to}}
+
+  Fields sent with every form:
+  {{site_url}} {{to_email}}
+  {{name}} {{email}} {{subject}} {{message}} {{reply_to}}
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{subject}}</title>
+  </head>
+  <body style="margin:0;padding:0;background:#f3f4f6;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:32px 12px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border:1px solid #e5e7eb;border-radius:20px;">
+            <tr>
+              <td style="padding:28px 28px 8px 28px;font-family:Arial,Helvetica,sans-serif;">
+                <table role="presentation" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="width:40px;height:40px;background:#111827;border-radius:12px;text-align:center;vertical-align:middle;color:#ffffff;font-size:18px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">
+                      B
+                    </td>
+                    <td style="padding-left:12px;color:#111827;font-size:15px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">
+                      Bhanu Shankar
+                    </td>
+                  </tr>
+                </table>
+                <p style="margin:22px 0 0;color:#6b7280;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-family:Arial,Helvetica,sans-serif;">
+                  New portfolio message
+                </p>
+                <h1 style="margin:8px 0 0;color:#111827;font-size:26px;line-height:1.25;font-weight:700;font-family:Arial,Helvetica,sans-serif;">
+                  {{subject}}
+                </h1>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:20px 28px 8px 28px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:14px;">
+                  <tr>
+                    <td style="padding:16px 18px;border-bottom:1px solid #e5e7eb;font-family:Arial,Helvetica,sans-serif;">
+                      <div style="color:#6b7280;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;">From</div>
+                      <div style="margin-top:4px;color:#111827;font-size:15px;font-weight:600;">{{name}}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:16px 18px;font-family:Arial,Helvetica,sans-serif;">
+                      <div style="color:#6b7280;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;">Email</div>
+                      <div style="margin-top:4px;font-size:15px;">
+                        <a href="mailto:{{email}}" style="color:#111827;text-decoration:underline;">{{email}}</a>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:16px 28px 8px 28px;font-family:Arial,Helvetica,sans-serif;">
+                <div style="color:#6b7280;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;">Message</div>
+                <div style="margin-top:10px;color:#111827;font-size:15px;line-height:1.7;white-space:pre-wrap;">{{message}}</div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:22px 28px 28px 28px;">
+                <a href="mailto:{{reply_to}}" style="display:inline-block;background:#111827;color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;text-decoration:none;border-radius:999px;padding:12px 22px;">
+                  Reply to {{name}}
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:16px 28px 22px 28px;border-top:1px solid #e5e7eb;font-family:Arial,Helvetica,sans-serif;color:#6b7280;font-size:12px;line-height:1.6;">
+                Sent from the contact form on
+                <a href="{{site_url}}" style="color:#111827;text-decoration:underline;">{{site_url}}</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
