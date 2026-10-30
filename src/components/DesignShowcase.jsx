@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ArrowUpRight, Layers, Lightbulb, Workflow, Wrench } from "lucide-react";
+import { X, ArrowUpRight, Images, Layers, Lightbulb, Workflow, Wrench } from "lucide-react";
 import { designs } from "../data/designs";
 import { FigmaIcon } from "./brandIcons";
 import SectionHeading from "./SectionHeading";
@@ -30,12 +30,12 @@ export default function DesignShowcase() {
         <SectionHeading
           eyebrow="UI/UX Design"
           title="Design showcase"
-          subtitle="Selected UI work — open either piece to see the thinking behind it."
+          subtitle="Selected UI work — open a piece to see the thinking behind it."
         />
 
-        {/* Grid — sized for the current two designs */}
+        {/* Grid — two columns on tablet, three on desktop */}
         <Reveal className="mt-14 lg:mt-16">
-          <div className="grid auto-rows-[16rem] grid-cols-1 gap-4 sm:auto-rows-[18rem] sm:grid-cols-2 sm:gap-5">
+          <div className="grid auto-rows-[16rem] grid-cols-1 gap-4 sm:auto-rows-[18rem] sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
             {designs.map((design, i) => (
               <motion.button
                 key={design.id}
@@ -53,7 +53,7 @@ export default function DesignShowcase() {
                     <img
                       src={design.coverImage}
                       alt=""
-                      className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                      className={`h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] ${design.coverPosition ?? "object-center"}`}
                     />
                   ) : (
                     <div className="absolute inset-0 [&_svg]:absolute [&_svg]:inset-0 [&_svg]:h-full [&_svg]:w-full [&_svg]:object-cover">
@@ -120,7 +120,7 @@ export default function DesignShowcase() {
                   <img
                     src={selected.coverImage}
                     alt={selected.title}
-                    className="absolute inset-0 h-full w-full object-cover object-center"
+                    className={`absolute inset-0 h-full w-full object-cover ${selected.coverPosition ?? "object-center"}`}
                   />
                 ) : (
                   <div className="absolute inset-0 [&_svg]:absolute [&_svg]:inset-0 [&_svg]:h-full [&_svg]:w-full [&_svg]:object-cover">
@@ -167,24 +167,40 @@ export default function DesignShowcase() {
                   </div>
                 </div>
 
-                {selected.figmaUrl && (
-                  <a
-                    href={selected.figmaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-primary"
-                  >
-                    <FigmaIcon className="h-4 w-4" aria-hidden="true" />
-                    Open in Figma
-                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                  </a>
-                )}
+                <div className="mt-6 flex flex-col gap-2.5">
+                  {selected.figmaUrl && (
+                    <a
+                      href={selected.figmaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-primary"
+                    >
+                      <FigmaIcon className="h-4 w-4" aria-hidden="true" />
+                      Open in Figma
+                      <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  )}
+                  {selected.uxScreen && (
+                    <a
+                      href={selected.uxScreen}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-primary"
+                    >
+                      <Images className="h-4 w-4" aria-hidden="true" />
+                      UX Screens
+                      <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  )}
+                </div>
 
                 <div className="mt-6 flex items-center gap-2 border-t border-line pt-4 text-xs text-muted">
                   <Layers className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
                   {selected.figmaUrl
                     ? "View the full file in Figma for screens, flows and details."
-                    : "UI case study from the design showcase."}
+                    : selected.uxScreen
+                      ? "Open the full UX screens to review layout, flows and details."
+                      : "UI case study from the design showcase."}
                 </div>
               </div>
             </motion.div>
