@@ -46,7 +46,7 @@ export default function ProjectShowcase() {
         <SectionHeading
           eyebrow="Featured Projects"
           title="Work that ships"
-          subtitle="From shipped work to a CRM in progress and an upcoming logistics platform — pick one to explore how it looks, works and is engineered."
+          subtitle="From finance, travel and real estate to a CRM in progress and an upcoming logistics platform — pick one to explore how it looks, works and is engineered."
         />
 
         {/* Filters — scroll on small screens so chips don't crush the layout */}

@@ -52,6 +52,30 @@ export const projects = [
     palette: { from: "#0f766e", to: "#f59e0b", accent: "#fbbf24", glow: "rgba(251,191,36,0.3)" },
   },
   {
+    id: "estateone",
+    name: "EstateOne",
+    category: "React",
+    categories: ["React"],
+    tagline: "Verified real estate marketplace",
+    description:
+      "A luxury verified real estate marketplace for premier Indian cities — RERA-backed listings, faceted search, property details, site-visit booking and a customer dashboard built in React.",
+    caseStudy:
+      "EstateOne is designed to replace ghost listings with a trustworthy discovery flow: city and type search, verified property cards, title and RERA checks, then a direct path to enquire or schedule a visit. React Router keeps buy, rent, commercial, listing and account surfaces on one consistent design system.",
+    features: [
+      "Airbnb-style search across city, property type, budget and rooms",
+      "Verified listings with RERA checks and property detail views",
+      "Site visit booking, enquiries, saved properties and compare",
+      "List-property wizard for owners, agents and builders",
+      "Responsive marketing site plus customer account flows",
+    ],
+    tech: ["React 18", "JavaScript", "Vite", "Tailwind CSS", "shadcn/ui", "Radix UI", "React Router"],
+    github: "https://github.com/Bhanu-dev1996/estateone",
+    demo: "https://estateone-web.netlify.app/",
+    variant: "landing",
+    featured: true,
+    palette: { from: "#142B4A", to: "#2563EB", accent: "#C5A46D", glow: "rgba(197,164,109,0.35)" },
+  },
+  {
     id: "novacrm",
     name: "NovaCRM",
     category: "Dashboards",
